@@ -1,5 +1,6 @@
 require "functional_operations/version"
 
 module FunctionalOperations
-  # Your code goes here...
 end
+
+require "functional_operations/operation"
