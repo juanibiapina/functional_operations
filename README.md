@@ -26,17 +26,17 @@ of this gem:
 
 ```ruby
 class RegisterUser < FunctionalOperations::Operation
-    def validate
-        required :name, String
-        optional :email, String
-    end
+  def validate
+    required :name, String
+    optional :email, String
+  end
 
-    def perform
-        user = User.create!(name: params[:name], email: params[:email])
-        user.save!
-        # send e-mail to user or other logic that usually goes into after hooks
-        user
-    end
+  def perform
+    user = User.create!(name: params[:name], email: params[:email])
+    user.save!
+     # send e-mail to user or other logic that usually goes into after hooks
+    user
+  end
 end
 ```
 
