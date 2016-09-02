@@ -3,7 +3,7 @@ require "spec_helper"
 class SomeOperation < FunctionalOperations::Operation
   attr_reader :called
 
-  def validate
+  def arguments
     required :foo, String
     optional :bar, String
   end

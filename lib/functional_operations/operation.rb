@@ -6,7 +6,7 @@ class FunctionalOperations::Operation
   def call(params)
     @params = params
 
-    validate_params
+    process_arguments
 
     self.perform
   end
@@ -27,8 +27,8 @@ class FunctionalOperations::Operation
     end
   end
 
-  def validate_params
-    validate if respond_to?(:validate)
+  def process_arguments
+    arguments if respond_to?(:arguments)
   end
 
   def params
