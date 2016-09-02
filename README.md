@@ -32,7 +32,7 @@ class RegisterUser < FunctionalOperations::Operation
   end
 
   def perform
-    user = User.create!(name: params[:name], email: params[:email])
+    user = User.create!(name: @name, email: @email)
     user.save!
      # send e-mail to user or other logic that usually goes into after hooks
     user
