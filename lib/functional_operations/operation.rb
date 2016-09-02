@@ -19,12 +19,16 @@ class FunctionalOperations::Operation
     if !type.nil?
       raise "Param #{name} has wrong type: #{params[name].class} instead of #{type}" unless params[name].is_a?(type)
     end
+
+    instance_variable_set("@#{name}", params[name])
   end
 
   def optional(name, type = nil)
     if !params[name].nil? && !type.nil?
       raise "Param #{name} has wrong type: #{params[name].class} instead of #{type}" unless params[name].is_a?(type)
     end
+
+    instance_variable_set("@#{name}", params[name])
   end
 
   def process_arguments
