@@ -61,17 +61,17 @@ To integrate with RSpec, add the following to the `spec_helper`:
 require "functional_operations/rspec"
 ```
 
-You can create tests with the `:operation` type and test with DSL included:
+You can create tests with the `:operation` type and test with the DSL included:
 
 ```ruby
 require "spec_helper"
 
 RSpec.describe RegisterUser, type: :operation do
   context "with valid params" do
-    it "create an user" do
+    it "creates an user" do
       run RegisterUser, name: "John"
 
-      # expect(...).to eq(..)
+      # expect(...).to eq(...)
     end
   end
 end
