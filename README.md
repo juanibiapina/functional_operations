@@ -51,6 +51,32 @@ Or include `FunctionalOperations::DSL` and use:
 run RegisterUser, name: "John"
 ```
 
+## Tests
+
+### RSpec
+
+To integrate with RSpec, add the following to the `spec_helper`:
+
+```ruby
+require "functional_operations/rspec"
+```
+
+You can create tests with the `:operation` type and test with DSL included:
+
+```ruby
+require "spec_helper"
+
+RSpec.describe RegisterUser, type: :operation do
+  context "with valid params" do
+    it "create an user" do
+      run RegisterUser, name: "John"
+
+      # expect(...).to eq(..)
+    end
+  end
+end
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run
