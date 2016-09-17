@@ -26,7 +26,7 @@ of this gem:
 
 ```ruby
 class RegisterUser < FunctionalOperations::Operation
-  def validate
+  def arguments
     required :name, String
     optional :email, String
   end
