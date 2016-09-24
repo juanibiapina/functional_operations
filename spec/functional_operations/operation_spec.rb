@@ -26,13 +26,13 @@ RSpec.describe FunctionalOperations::Operation do
       operation.call(params)
     end
 
-     it "calls perform on self" do
-        expect(operation.called).to eq(["perform"])
-     end
+    it "calls perform on self" do
+      expect(operation.called).to eq(["perform"])
+    end
 
-     it "makes params available to subclass" do
-        expect(operation.send(:params)).to eq(params)
-     end
+    it "makes params available to subclass" do
+      expect(operation.send(:params)).to eq(params)
+    end
   end
 
   describe "optional params" do
