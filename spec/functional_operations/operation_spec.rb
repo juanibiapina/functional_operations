@@ -130,4 +130,21 @@ RSpec.describe FunctionalOperations::Operation do
       end
     end
   end
+
+  describe "perform interface" do
+    let(:params) {{
+      foo: "value",
+    }}
+
+    let(:operation) { double(SomeOperation) }
+
+    it "calls perform on self" do
+      allow(SomeOperation).to receive(:new).and_return(operation)
+      allow(operation).to receive(:call)
+
+      SomeOperation.perform(params)
+
+      expect(operation).to have_received(:call).with(params)
+    end
+  end
 end

@@ -43,7 +43,7 @@ end
 Then call the operation:
 
 ```ruby
-user = RegisterUser.new.call(name: "John")
+user = RegisterUser.perform(name: "John")
 ```
 
 Or include `FunctionalOperations::DSL` and use:

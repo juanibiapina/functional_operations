@@ -3,6 +3,10 @@ require "functional_operations/dsl"
 class FunctionalOperations::Operation
   include FunctionalOperations::DSL
 
+  def self.perform(params)
+    new.call(params)
+  end
+
   def call(params)
     @params = params
 
